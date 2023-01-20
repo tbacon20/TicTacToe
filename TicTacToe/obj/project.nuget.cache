@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VTUSANSyrPVGqRSagoVLYGNojMXGfOsATiHR0oh7VqR8mIwK8Db7EXKM1lTFOhBuqXGvjIeOtwo5E2KGtSFopA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tanner\\ISCore\\WINTER 2023\\IS413 Enterprise App\\Missions\\Mission3\\TicTacToe\\TicTacToe\\TicTacToe.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tanner\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+  ],
+  "logs": []
+}
