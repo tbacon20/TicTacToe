@@ -10,14 +10,12 @@ namespace TicTacToe
 
             char [] BoardArrayParameter = new char[9];
 
-            for (int i = 0, i < BoardArrayParameter.Length, i++)
+            for (int i = 1; i <= BoardArrayParameter.Length; i++)
             {
-                BoardArrayParameter[i] = (char)i;
+                BoardArrayParameter[i] = (char)(i + '0');
             }
 
-
-            Console.WriteLine(BoardArrayParameter);
-            //new Board = bd(BoardArrayParameter);
+            //Board bd = new Board(BoardArrayParameter);
 
             //bd.displayBoard();
 
