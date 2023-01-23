@@ -54,7 +54,7 @@ namespace TicTacToe
 
 
 
-                while (GuessList.Contains(PlayerTurn))
+                while (GuessList.Contains(PlayerTurn) || PlayerTurn > 9)
                 {
                     Console.WriteLine("Please choose a vacant space to go.");
                     PlayerTurn = Convert.ToInt32(Console.ReadLine());

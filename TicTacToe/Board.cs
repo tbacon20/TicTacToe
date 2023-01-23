@@ -16,13 +16,13 @@ namespace TicTacToe
             
             // This Creates the Board and loads the values from the array into the board
             Console.WriteLine("     |     |     ");
-            Console.WriteLine("  {0}    |  {1}  |  {2}  ", currentBoard[0], currentBoard[1], currentBoard[2]);
+            Console.WriteLine("  {0}  |  {1}  |  {2}  ", currentBoard[0], currentBoard[1], currentBoard[2]);
             Console.WriteLine("_____|_____|_____");
             Console.WriteLine("     |     |     ");
-            Console.WriteLine("  {0}    |  {1}  |  {2}  ", currentBoard[3], currentBoard[4], currentBoard[5]);
+            Console.WriteLine("  {0}  |  {1}  |  {2}  ", currentBoard[3], currentBoard[4], currentBoard[5]);
             Console.WriteLine("_____|_____|_____");
             Console.WriteLine("     |     |     ");
-            Console.WriteLine("  {0}    |  {1}  |  {2}  ", currentBoard[6], currentBoard[7], currentBoard[8]);
+            Console.WriteLine("  {0}  |  {1}  |  {2}  ", currentBoard[6], currentBoard[7], currentBoard[8]);
             Console.WriteLine("     |     |    ");
 
         }
@@ -31,6 +31,14 @@ namespace TicTacToe
         {
             string winMsg = "";
             // Horizontal Winning Combinations
+
+            turnCount++;
+            if (turnCount == 9)
+            {
+                winMsg = "It's a Draw";
+                return winMsg;
+            }
+
             if ((currentBoard[0] == currentBoard[1]) && (currentBoard[1] == currentBoard[2]))
             {
                 if (currentBoard[0] == 'X')
@@ -64,9 +72,7 @@ namespace TicTacToe
                     winMsg = "Player 2 wins!";
                 }
             }
-
-            //Vertical Winning Combinations
-            if ((currentBoard[0] == currentBoard[3]) && (currentBoard[3] == currentBoard[6]))
+            else if ((currentBoard[0] == currentBoard[3]) && (currentBoard[3] == currentBoard[6]))
             {
                 if (currentBoard[0] == 'X')
                 {
@@ -99,9 +105,7 @@ namespace TicTacToe
                     winMsg = "Player 2 wins!";
                 }
             }
-
-            //Diagonal Winning Combinations
-            if ((currentBoard[2] == currentBoard[4]) && (currentBoard[4] == currentBoard[6]))
+            else if ((currentBoard[2] == currentBoard[4]) && (currentBoard[4] == currentBoard[6]))
             {
                 if (currentBoard[2] == 'X')
                 {
@@ -125,15 +129,7 @@ namespace TicTacToe
             }
             else
             {
-                if (turnCount == 9)
-                {
-                    winMsg = "It's a Draw";
-                }
-                else
-                {
-                    winMsg = "Next Turn";
-                }
-                turnCount++;
+                winMsg = "Next Turn";
             }
 
 
