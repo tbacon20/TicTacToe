@@ -12,16 +12,15 @@ namespace TicTacToe
 
             char [] BoardArrayParameter = new char[9];
 
-            for (int i = 1; i <= BoardArrayParameter.Length; i++)
+            int j = 0;
+            for (int i = 0; i < BoardArrayParameter.Length; i++)
             {
-              
-               BoardArrayParameter[i] = (char)(i + '0');
+                j = i + 1;
+                BoardArrayParameter[i] = (char)(j + '0');
                
             }
 
-            Console.WriteLine(BoardArrayParameter);
-
-            new Board = bd(BoardArrayParameter);
+            Board bd = new Board();
 
             bool StillPlaying = true;
             int turnCount = 0;
@@ -32,7 +31,7 @@ namespace TicTacToe
 
             while (StillPlaying)
             {
-                bd.displayBoard();
+                bd.displayBoard(BoardArrayParameter);
 
                 turnCount++;
 
@@ -65,13 +64,11 @@ namespace TicTacToe
 
                 BoardArrayParameter[PlayerTurn - 1] = PlayerMarker;
 
-                bd.displayBoard(BoardArrayParameter);
-
-                string GameStatus = bd.determineWinner();
+                string GameStatus = bd.winnerDetermination(BoardArrayParameter);
 
                 Console.WriteLine(GameStatus);
 
-                if (GameStatus == "Next Turn:")
+                if (GameStatus == "Next Turn")
                 {
                     StillPlaying = true;
                 }
@@ -82,17 +79,14 @@ namespace TicTacToe
 
             }
 
+            bd.displayBoard(BoardArrayParameter);
             Console.WriteLine("Good game! Play again? (Y/N)");
             char PlayAgain = Convert.ToChar(Console.ReadLine());
 
-            if (PlayAgain == 'Y')
+            if (PlayAgain == 'Y' || PlayAgain == 'y')
             {
                 Main();
             }
-
-
-
-
         }
     }
 }
